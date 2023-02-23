@@ -1,0 +1,27 @@
+{% extends 'Main.html' %}
+{% load static %}
+{% block content %}
+<div class="text-center">
+    <p class="text-center">you have searched for:<b>"{{query}}"</b></p>
+</div>
+{% if products %}
+{% for product in products %}
+<h1>{{product.name}}</h1>
+<h2>{{product.price}}</h2>
+
+{% endfor %}
+{% else %}
+<div class="row mx-auto">
+    <p class="text-center">0 results found</p>
+</div>
+{% endif %}
+<!--{% if products %}-->
+<!--    <ul>-->
+<!--    {% for result in products %}-->
+<!--        <li><a href="{{ result.get_absolute_url }}">{{ result.name }}</a></li>-->
+<!--    {% endfor %}-->
+<!--    </ul>-->
+<!--{% else %}-->
+<!--    <p>No results found.</p>-->
+<!--{% endif %}-->
+{% endblock %}
